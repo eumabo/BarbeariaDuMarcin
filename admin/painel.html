@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Painel Admin</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="painel">
+
+<h1>Agendamentos</h1>
+
+<button onclick="logout()">Sair</button>
+
+<table>
+
+<thead>
+<tr>
+<th>Nome</th>
+<th>Telefone</th>
+<th>Data</th>
+<th>Hora</th>
+<th>Serviços</th>
+<th>Ação</th>
+</tr>
+</thead>
+
+<tbody id="lista"></tbody>
+
+</table>
+
+<div id="dashboard">
+  <p>Agendados hoje: <span id="agendados"></span></p>
+  <p>Horários livres: <span id="livres"></span></p>
+</div>
+
+<input type="date" id="dataBloqueio">
+<input type="time" id="horaBloqueio">
+<select id="barbeiroBloqueio">
+  <option>João</option>
+  <option>Pedro</option>
+</select>
+
+<button onclick="bloquearHorario()">Bloquear horário</button>
+
+</div>
+
+<script src="../firebase.js"></script>
+<script src="admin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barbearia Du Marcin</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="stylesheet" href="style.css" />
+
+<head>
+  <meta charset="UTF-8">
+  <title>Barbearia Du Marcin</title>
+
+  <link rel="icon" type="image/png" href="favicon.png">
+
+</head>
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#inicio" class="brand">
+        <img src="logo.png" alt="Barbearia Du Marcin" class="brand-logo" />
+        <div class="brand-text">
+          <strong>Barbearia Du Marcin</strong>
+          <span>Agendamento premium </span>
+        </div>
+      </a>
+
+      <nav class="menu">
+        <a href="#inicio">Início</a>
+        <a href="#agendar">Agendar</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <a class="whatsapp-top" href="https://wa.me/5599999999999" target="_blank" rel="noopener noreferrer">
+        WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section" id="inicio">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <span class="hero-badge">Barbearia premium </span>
+          <h1>Seu horário com estilo, conforto e atendimento de alto nível.</h1>
+          <p>
+            Escolha o serviço, o barbeiro, a data e o horário com uma experiência moderna,
+            visual premium e envio direto para o WhatsApp.
+          </p>
+          <a href="#agendar" class="hero-btn">Agendar agora</a>
+        </div>
+
+        <div class="hero-logo-wrap">
+          <img src="logo.png" alt="Logo Barbearia Du Marcin" class="hero-logo" />
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-section" id="agendar">
+      <div class="container booking-grid">
+        <div class="booking-card">
+          <div class="card-header">
+            <h2>O que você gostaria de agendar?</h2>
+            <p>Selecione os serviços, o barbeiro e o melhor horário.</p>
+            
+          </div>
+
+          <form id="agendamentoForm">
+            <div class="form-block">
+              <h3>Escolha o serviço</h3>
+              <div class="services-list" id="servico"></div>
+            </div>
+
+            <div class="form-block">
+              <h3>Escolha o barbeiro</h3>
+              <div class="barbers-grid">
+                <label class="barber-option selected">
+                  <input type="radio" name="barbeiro_card" value="Marcin" checked />
+                  <div class="barber-avatar">M</div>
+                  <span>Marcin</span>
+                </label>
+
+                <label class="barber-option">
+                  <input type="radio" name="barbeiro_card" value="Pedro" />
+                  <div class="barber-avatar">V</div>
+                  <span>Vinicius</span>
+                </label>
+
+              </div>
+            </div>
+
+            <div class="form-block">
+              <h3>Escolha a data</h3>
+              <div class="date-scroll" id="dateSelector"></div>
+            </div>
+
+            <div class="form-block">
+              <div class="schedule-top">
+                <h3>Horários disponíveis</h3>
+                <span id="agendaInfo">Escolha um dia para ver os horários.</span>
+              </div>
+              <div class="time-grid" id="timeGrid"></div>
+            </div>
+
+            <div class="form-block details-grid">
+              <div class="field">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" placeholder="Seu nome" required />
+              </div>
+
+              <div class="field">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" placeholder="(00) 00000-0000" />
+              </div>
+
+              <div class="field">
+                <label for="pagamento">Pagamento</label>
+                <select id="pagamento" required>
+                  <option value="">Selecione</option>
+                  <option>Pix</option>
+                  <option>Dinheiro</option>
+                  <option>Cartão de débito</option>
+                  <option>Cartão de crédito</option>
+                </select>
+              </div>
+
+              <div class="field hidden-field">
+                <label for="data">Data</label>
+                <input type="date" id="data" required />
+              </div>
+
+              <div class="field hidden-field">
+                <label for="horario">Horário</label>
+                <input type="time" id="horario" required />
+              </div>
+
+              <div class="field hidden-field">
+                <label for="barbeiro">Profissional</label>
+                <input type="text" id="barbeiro" />
+              </div>
+
+              <div class="field field-full">
+                <label for="observacoes">Observações</label>
+                <textarea id="observacoes" placeholder="Alguma observação sobre o atendimento?"></textarea>
+              </div>
+            </div>
+
+            <p class="error" id="erroMsg">Preencha os campos obrigatórios, escolha um serviço, data e horário.</p>
+          </form>
+        </div>
+
+        <aside class="summary-card">
+          <h2>Resumo do Agendamento</h2>
+
+          <div class="summary-list">
+            <div class="summary-row">
+              <span>Serviços:</span>
+              <strong id="resumoServicos">Nenhum</strong>
+            </div>
+            <div class="summary-row">
+              <span>Barbeiro:</span>
+              <strong id="resumoBarbeiro">Marcin</strong>
+            </div>
+            <div class="summary-row">
+              <span>Data:</span>
+              <strong id="resumoData">Selecione</strong>
+            </div>
+            <div class="summary-row">
+              <span>Hora:</span>
+              <strong id="resumoHorario">Selecione</strong>
+            </div>
+            <div class="summary-row">
+              <span>Duração:</span>
+              <strong id="tempoEstimado">0 min</strong>
+            </div>
+            <div class="summary-row total-row">
+              <span>Valor total:</span>
+              <strong id="totalPrice">R$ 0,00</strong>
+            </div>
+          </div>
+
+          <div class="summary-payment">
+            <label>Pagar online</label>
+            <div class="payment-box">Pix • Crédito • Débito</div>
+          </div>
+
+          <button type="submit" form="agendamentoForm" class="book-btn">Agendar pelo WhatsApp</button>
+          <button type="button" id="btnLimpar" class="secondary-btn">Limpar</button>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contato">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Barbearia Du Marcin" class="footer-logo" />
+      </div>
+      <div>
+        <h4>Links</h4>
+        <a href="#inicio">Início</a>
+        <a href="#agendar">Agendar</a>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <a href="tel:+5527999769394">(27) 99976-9394</a>
+        <a href="https://wa.me/5527999769394" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+      <div>
+        <h4>Redes sociais</h4>
+        <a href="https://www.instagram.com/barbeariadumarcin_/">Instagram</a>
+        <a href=""></a>
+
+        <div class="admin-footer">
+      <a href="admin/login.html">Área administrativa</a>
+      </div>
+      </div>
+    </div>
+
+    <button id="adminReset" style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 15px;background:#000;color:#fff;border:none;border-radius:8px;cursor:pointer;z-index:9999;">
+Limpar agendamentos
+</button>
+
+  </footer>
+
+  <!--script do fire-->
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "SUA_API_KEY",
+  authDomain: "barbeariadumarcin.firebaseapp.com",
+  projectId: "barbeariadumarcin",
+  storageBucket: "barbeariadumarcin.firebasestorage.app",
+  messagingSenderId: "39673197769",
+  appId: "1:39673197769:web:1b12528657105591244918",
+  measurementId: "G-7B2EH5XTER"
+};
+
+
+
+const app = initializeApp(firebaseConfig);
+
+window.firebaseDB = getFirestore(app);
+
+</script>
+  <script type="module">
+  // firebase config aqui
+</script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
