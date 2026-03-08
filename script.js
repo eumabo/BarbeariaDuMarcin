@@ -175,6 +175,14 @@ async function renderTimeSlots(){
 
   agendaInfo.textContent = `Horários disponíveis para ${formatDateLabel(selectedDate)}.`;
 const duracaoServico = getDuracaoTotal();
+
+if(duracaoServico === 0){
+duracaoServico = 30;
+}
+
+const indexAtual = horariosBase.indexOf(hora);
+
+const blocos = Math.ceil(duracaoServico / 30);
   horariosBase.forEach(hora => {
 
     
