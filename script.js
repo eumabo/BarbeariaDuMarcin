@@ -1,11 +1,16 @@
 const WHATSAPP_NUMBER = '5599999999999';
 const servicos = [
-  { nome: 'Corte', preco: 35, duracao: 40 },
-  { nome: 'Barba', preco: 25, duracao: 30 },
-  { nome: 'Corte + barba', preco: 55, duracao: 70 },
-  { nome: 'Corte + pigmentação', preco: 65, duracao: 80 },
-  { nome: 'Pigmentação', preco: 30, duracao: 35 },
-  { nome: 'Sobrancelha', preco: 15, duracao: 15 }
+  { nome: 'Corte', preco: 30, duracao: 40 },
+  { nome: 'Barba', preco: 20, duracao: 30 },
+  { nome: 'Corte + barba', preco: 50, duracao: 70 },
+  { nome: 'Corte + pigmentação', preco: 50, duracao: 80 },
+  { nome: 'Pezinho', preco: 10, duracao: 10 },
+  { nome: 'Sobrancelha', preco: 10, duracao: 15 }
+  { nome: 'luzes', preco: 90, duracao: 60 }
+  { nome: 'platinado', preco: 100, duracao: 80 }
+  { nome: 'Pomada modeladora', preco: 25,}
+  { nome: 'Gel cola', preco: 30, }
+  { nome: 'minoxídil', preco: 30, }
 ];
 const horariosBase = ['08:00','08:30','09:00','09:30','10:00','10:30','11:00','11:30','13:00','13:30','14:00','14:30','15:00','15:30','16:00','16:30','17:00','17:30','18:00'];
 const indisponiveis = {};
