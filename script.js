@@ -90,9 +90,10 @@ function preencherServicos(){
     price.className = 'service-price';
     price.textContent = formatCurrency(Number(servico.preco || 0));
     input.addEventListener('change', () => {
-      label.classList.toggle('selected', input.checked);
-      atualizarResumo();
-    });
+  label.classList.toggle('selected', input.checked);
+  atualizarResumo();
+  renderTimeSlots();
+});
     label.appendChild(input);
     label.appendChild(check);
     label.appendChild(info);
